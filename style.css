@@ -2,6 +2,24 @@ body {
     text-align: justify;
     font-family: sans-serif;
     margin: 0;
+    padding: 0;
+    background: url(fondo.jpg);
+    background-size: 1800px;
+    background-position: center;
+    font-size: 16px;
+
+}
+
+header {
+    display: flex;
+    min-height: 70px;
+    background: url(fondo-menu.jpg);
+    background-size: 1800px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+
 }
 
 a {
@@ -11,6 +29,7 @@ a {
     height: 20px;
     display: inline-block;
     margin-right: 5px;
+
 }
 
 
@@ -34,27 +53,9 @@ h2 {
 }
 */
 
-body {
-
-    margin: 0;
-    padding: 0;
-    background: url(fondo.jpg);
-    background-size: 1800px;
-    background-position: center;
-    font-family: sans-serif;
 
 
-}
 
-header {
-    display: flex;
-    min-height: 70px;
-    background: url(fondo-menu.jpg);
-    background-size: 1800px;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-}
 
 .logo {
     float: left;
@@ -93,3 +94,7 @@ nav a:hover {
     color: #9f9ea0;
     font-size: 12px;
 }
+header, footer {
+    background-color: #2ecc71;
+    color: #000000;
+    padding: 10px;}

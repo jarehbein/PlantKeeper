@@ -1,0 +1,68 @@
+body{
+    font-family: sans-serif;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    height: 20px;
+}
+
+h2{
+    color: whitesmoke;
+}
+
+
+
+/*
+#imagen-fondo{
+    
+    background-image: ;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 1800px;
+    background-attachment: fixed;
+    background-image: ;
+    background-size: cover;
+    
+}
+*/
+
+body{
+    margin: 0;
+    padding: 0;
+    background: url(fonod.jpg);   
+    background-size: 1800px;
+    background-position: center;
+    font-family: sans-serif;
+}
+
+header{
+    display: flex;
+    min-height: 70px;
+    background-color: aquamarine;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo img{
+    height: 50px;
+    margin-right: 10px;
+}
+
+nav a{
+    font-weight: 600;
+    padding-right: 10px;
+}
+
+nav a:hover{
+    color: aliceblue;
+}
+

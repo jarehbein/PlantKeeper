@@ -3,17 +3,19 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-    background: url(fondo.jpg);
-    background-size: 1800px;
+    background-color: antiquewhite;
+    background-size: 100% 100%;
     background-position: center;
+    background-repeat: no-repeat;
     font-size: 16px;
 
 }
 
+
 header {
     display: flex;
     min-height: 70px;
-    background: url(fondo-menu.jpg);
+    background-color: transparent;
     background-size: 1800px;
     justify-content: space-between;
     align-items: center;
@@ -73,13 +75,13 @@ nav a {
 }
 
 nav a:hover {
-    color: aliceblue;
+    color: rgb(14, 14, 14);
 }
 
 .container {
     max-width: 800px;
     margin: 0 auto;
-    background-color: #f9f9f9;
+    background-color: transparent;
     padding: 20px;
 }
 
@@ -116,12 +118,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #78b7c1;
+    background-color:transparent;
     padding: 10px;
   }
   
   header a {
-    color: #fff;
+    color: #000000;
     text-decoration: none;
     font-size: 1.2rem;
     margin-left: 20px;
@@ -148,7 +150,7 @@ body {
   .carousel-item img {
     object-fit: cover;
   }
-  
+
   .carousel-control-prev-icon,
   .carousel-control-next-icon {
     background-color: #000;
@@ -188,3 +190,72 @@ body {
     width: 80%;
   }
   
+
+/*=========================MEDIA QUERIES PANTALLA ANCHA================================*/
+
+@media (max-width:1200px){
+  #intro, #equipo {
+      width:90% !important;
+      margin:auto;
+  }
+
+  #local {
+      flex-wrap: wrap;
+      padding-top:30px;
+ }
+ .wrapper-local {
+  width:90%;
+  margin:auto;
+  padding-top:50px;    
+ }
+
+}
+/*=========================MEDIA QUERIES PANTALLA SM================================*/
+
+
+@media (max-width:768px) {
+
+  #intro, #equipo{
+      width:90% !important;
+      margin:auto;
+  }
+
+  
+  #img-equipo{
+      max-height:20rem !important;
+      width:90%;
+  }
+  .wrapper-local {
+      width:90%;
+      margin:auto;
+      padding-top:50px;    
+  }
+  #local {
+      flex-wrap: wrap;
+  }
+  .mapa img {
+      width:100%;
+      height:auto;
+  }
+  #bg-contactos{
+      top: -120px;
+  }
+
+
+}
+/*=========================MEDIA QUERIES PANTALLA EXTRA-SM================================*/
+
+@media (max-width: 576px) {
+  #servicios-fila-2 {
+      width:100% !important;
+  }
+  #servicios-fila-1 {
+      width:100% !important;
+  }
+
+  .icono-wrap{
+      flex-wrap:wrap !important;
+      justify-content: center !important;
+      text-align: center;
+  }
+}

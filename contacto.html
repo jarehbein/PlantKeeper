@@ -3,31 +3,29 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Contacto</title>
+    <title>Plant Keeper</title>
     <link rel="stylesheet" href="foro.css">
     <link rel="stylesheet" href="contacto.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="img icon.png">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/sweetAlert.js"></script>
 </head>
-
 <body>
     <div class="container">
         <header>
-            <h1>Contactouw</h1>
-
+            <h1>Contacto</h1>
         </header>
         <div class="breadcrumbs">
             <a href="/" class="item">Inicio</a>
             >
             <a href="/contacto.html" class="item">Contacto</a>
-
         </div>
-
 
         <main>
             <form id="contact-form">
                 <div>
-                    <label for="name">TELEFONO YESS: </label>
+                    <label for="name">Nombre Completo: </label>
                     <input type="text" id="name" name="name" required />
                 </div>
                 <div>
@@ -35,13 +33,19 @@
                     <input type="email" id="email" name="email" required />
                 </div>
                 <div>
-                    <label for="message">Mensaje:</label>
-                    <textarea id="message" name="message" required></textarea>
+                    <label for="message">Escribe aquí tu comentario:</label>
+                    <p><textarea id="message" name="message" rows="10" cols="50" required></textarea></p>
                 </div>
                 <button type="submit">Enviar</button>
+                <p class="warnings" id="warnings"></p>
+                <script>
+                Swal.fire(
+                    '¡Se envío tu mensaje, muchas gracias!',
+                  )
+                  </script>
+                <p>Cualquier duda o consulta estaremos al pendiente!</p>
             </form>
         </main>
         <script src="contacto.js"></script>
 </body>
-
 </html>

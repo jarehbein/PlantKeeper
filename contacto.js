@@ -1,15 +1,31 @@
-const form = document.getElementById('contact-form');
+const nombre = document.getElementById("name")
+const email = document.getElementById("email")
+const mensaje = document.getElementById("message")
+const warn = document.getElementById("warnings")
 
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
+form.addEventListener("submit", e=>{
+  e.preventDefault()
+  let warnings = ""
+  let entrar = false
+  let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
+  warn.innerHTML = ""
+  if(nombre.value.length <6){
+      warnings += `El nombre no es válido <br>`
+      entrar = true
+  }
+  if(!regexEmail.test(email.value)){
+      warnings += `El email no es válido <br>`
+      entrar = true
+  }
+  if(mensaje.value.length > 1){
+      warnings += `Ingrese más de un dígito. <br>`
+      entrar = true
+  }
 
-  const name = form.elements['name'].value;
-  const email = form.elements['email'].value;
-  const message = form.elements['message'].value;
+  if(entrar){
+      warn.innerHTML = warnings
+  }else{
+      warn.innerHTML = "Enviado"
+  }
+})
 
-  // Aquí se puede enviar el formulario a un servidor o hacer cualquier otra acción necesaria con los datos del formulario
-
-  alert(`Gracias ${name} por contactarnos. Te responderemos lo antes posible.`);
-  
-  form.reset();
-});

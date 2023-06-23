@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Plant Keeper</title>
+    <link rel="stylesheet" href="../css/foro.css">
+    <link rel="stylesheet" href="../css/contacto.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/x-icon" href="../img/img icon.png">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/sweetAlert.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="#"><img src="../img/img icon.png" alt="Logo"></a>
+            </div>
+            <h1>Contacto</h1>
+        </header>
+        <div class="breadcrumbs">
+            <a href="index.html" class="item">Inicio</a>
+            >
+            <a href="contacto.html" class="item">Contacto</a>
+        </div>
+
+        <main>
+            <form id="contact-form">
+                <div>
+                    <label for="name">Nombre Completo:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="message">Escribe aquí tu comentario:</label>
+                    <textarea id="message" name="message" rows="10" cols="50" required></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+                <p class="warnings" id="warnings"></p>
+            </form>
+            <p>Cualquier duda o consulta estaremos al pendiente!</p>
+        </main>
+    </div>
+
+    <script src="./js/contacto.js"></script>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            Swal.fire('¡Se envió tu mensaje, muchas gracias!');
+        });
+    </script>
+</body>
+
+</html>

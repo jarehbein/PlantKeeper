@@ -21,15 +21,20 @@
         <a href="#"><img src="../img/img icon.png" alt="Logo"></a>
       </div>
       <nav>
+        <ul>
         <a href="index.html">Plant Keeper</a>
         <a href="calendario.html">Calendario</a>
         <a href="foro.html">Foro</a>
         <a href="galeria.html">Galería</a>
         <a href="biblioteca.html">Biblioteca de Plantas</a>
         <a href="contacto.html">Contacto</a>
+        <li class="login-button"><a href="inisesion.html">Iniciar sesión</a></li>
+        <!--<a href="#" onclick="showPopup(event)">Iniciar sesión</a>-->
+      </ul>
       </nav>
     </header>
   </div>
+  
   
   <div id="carousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
@@ -76,6 +81,7 @@
     </div>
   </section>
   
+  
   <footer>
     <div class="container">
       <div class="row">
@@ -85,6 +91,40 @@
       </div>
     </div>
   </footer>
+<!-- Popup HTML 
+<div id="popup" class="popup-overlay">
+  <div class="popup-content">
+    <span class="popup-close" onclick="closePopup()">&times;</span>
+    <h2>Iniciar sesión</h2>
+    <form class="popup-form" action="#">
+      <label for="username">Usuario:</label>
+      <input type="text" id="username" name="username" required>
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y
+      <label for="password">Contraseña:</label>
+      <input type="password" id="password" name="password" required>
+
+      <input type="submit" value="Iniciar sesión">
+    </form>
+    <div class="forgot-password">
+      <a href="#">¿Olvidaste tu contraseña?</a>
+    </div>
+  </div>
+  
+</div>
+
+<script>
+  function showPopup(event) {
+    event.preventDefault();
+    var popup = document.getElementById('popup');
+    popup.style.display = 'block';
+  }
+
+  function closePopup() {
+    // Obtener el elemento del popup por su ID y ocultarlo cambiando su estilo
+    var popup = document.getElementById('popup');
+    popup.style.display = 'none';
+  }
+</script>-->
+</body>
+
+</html>

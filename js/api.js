@@ -1,157 +1,94 @@
-const settings = {
-	async: true,
-	crossDomain: true,
-	url: 'https://house-plants2.p.rapidapi.com/search?query=Fern',
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
-		'X-RapidAPI-Host': 'house-plants2.p.rapidapi.com'
-	}
-};
+let cantidadNoticias = 5;
+let pageFinal = cantidadNoticias;
+let pageInicial = 0;
+let temaActual = "plantas flor";
 
-$.ajax(settings).done(function (response) {
-	console.log(response);
-});
+let noticias = {
+    "apiKey":"f3798e116eb342b2bae58e7f0cbd9c11",
+    fetchNoticias:function(categoria){
+        fetch(
+            "https://newsapi.org/v2/everything?q="
+            +categoria+
+            "&languaje=es&apiKey="+this.apiKey
+        )
+        .then((response)=>response.json())
+        .then((data)=>this.displayNoticias(data));
+    },
+    displayNoticias: function(data){
+        if(pageInicial==0){
+            document.querySelector(".container-noticias").textContent ="";
+        }
 
-[
-	{
-	  "Categories": "Dracaena",
-	  "Disease": "N/A",
-	  "Use": [
-		"Potted plant",
-		"Secondary"
-	  ],
-	  "Latin name": "Dracaena deremensis 'Janet Craig'",
-	  "Insects": [
-		"Mealy bug",
-		"Scale"
-	  ],
-	  "Avaibility": "Regular",
-	  "url": "http://www.tropicopia.com/house-plant/detail.np/detail-121.html",
-	  "Style": "Bush",
-	  "Bearing": "Erect",
-	  "Light tolered": "Diffuse light ( Less than 5,300 lux / 500 fc)",
-	  "Height at purchase": {
-		"m": 0.91,
-		"cm": 91
-	  },
-	  "Light ideal": "Strong light ( 21,500 to 3,200 lux/2000 to 300 fc)",
-	  "Width at purchase": {
-		"m": 0.91,
-		"cm": 91
-	  },
-	  "id": "53417c12-4824-5995-bce0-b81984ebbd1d",
-	  "Appeal": "Robustness",
-	  "img": "http://www.tropicopia.com/house-plant/thumbnails/5556.jpg",
-	  "Perfume": null,
-	  "Growth": "Regular",
-	  "Width potential": {
-		"m": 1.22,
-		"cm": 122
-	  },
-	  "Common name (fr.)": "Janet Craig",
-	  "Pruning": "If needed",
-	  "Family": "Liliaceae",
-	  "Height potential": {
-		"m": 3.66,
-		"cm": 366
-	  },
-	  "Origin": [
-		"Cultivar"
-	  ],
-	  "Description": null,
-	  "Blooming season": "Winter / Spring",
-	  "Color of leaf": [
-		"Dark green"
-	  ],
-	  "Watering": "Keep moist between watering & Can dry between watering",
-	  "Color of blooms": "Light green",
-	  "Zone": [
-		"11-10"
-	  ],
-	  "Common name": [
-		"Janet Craig"
-	  ],
-	  "Available sizes (Pot)": "4in to 14in / 10cm to 36cm",
-	  "Other names": null,
-	  "Temperature": {
-		"F": 50,
-		"C": 10
-	  },
-	  "Pot diameter (cm)": {
-		"m": 0.25,
-		"cm": 25
-	  },
-	  "Climat": "Tropical"
-	},
-	{
-	  "Categories": "Palm",
-	  "Disease": "N/A",
-	  "Use": [
-		"Potted plant",
-		"Secondary"
-	  ],
-	  "Latin name": "Rhapis excelsa",
-	  "Insects": [
-		"N/A"
-	  ],
-	  "Avaibility": "Regular",
-	  "url": "http://www.tropicopia.com/house-plant/detail.np/detail-290.html",
-	  "Style": null,
-	  "Bearing": "Clump",
-	  "Light tolered": "Diffuse light ( Less than 5,300 lux / 500 fc)",
-	  "Height at purchase": {
-		"m": 0.91,
-		"cm": 91
-	  },
-	  "Light ideal": "Strong light ( 21,500 to 3,200 lux/2000 to 300 fc)",
-	  "Width at purchase": {
-		"m": 0.71,
-		"cm": 71
-	  },
-	  "id": "9b97aef1-20a4-5620-af90-7d64dadb414e",
-	  "Appeal": "Foliage",
-	  "img": "http://www.tropicopia.com/house-plant/thumbnails/5725.jpg",
-	  "Perfume": null,
-	  "Growth": "Slow",
-	  "Width potential": {
-		"m": 3.05,
-		"cm": 305
-	  },
-	  "Common name (fr.)": null,
-	  "Pruning": "Never",
-	  "Family": "Arecaceae",
-	  "Height potential": {
-		"m": 3.66,
-		"cm": 366
-	  },
-	  "Origin": [
-		"China"
-	  ],
-	  "Description": null,
-	  "Blooming season": null,
-	  "Color of leaf": [
-		"Dark green"
-	  ],
-	  "Watering": "Keep moist between watering & Must not dry between watering",
-	  "Color of blooms": null,
-	  "Zone": [
-		"11",
-		"9"
-	  ],
-	  "Common name": [
-		"Lady palm"
-	  ],
-	  "Available sizes (Pot)": "6in to 32in / 15cm to 81cm",
-	  "Other names": "Rhapis flabelliformis",
-	  "Temperature": {
-		"F": 46.4,
-		"C": 8
-	  },
-	  "Pot diameter (cm)": {
-		"m": 0.25,
-		"cm": 25
-	  },
-	  "Climat": "Subtropical"
-	}
-  ]
+
+        for(i=pageInicial;i<=pageFinal;i++){
+            const {title} = data.articles[i];
+            let h2 = document.createElement("h2");
+            h2.textContent = title;
+    
+            const {urlToImage} = data.articles[i];
+            let img = document.createElement("img");
+            img.setAttribute("src", urlToImage);
+
+            let info_item = document.createElement("div");
+            info_item.className = "info_item";
+            const {publishedAt} = data.articles[i];
+            let fecha = document.createElement("span");
+            let date = publishedAt;
+            date=date.split("T")[0].split("-").reverse().join("-");
+            fecha.className = "fecha";
+            fecha.textContent = date;
+
+            const {name} = data.articles[i].source;
+            let fuente = document.createElement("span");
+            fuente.className = "fuente";
+            fuente.textContent = name;
+
+            info_item.appendChild(fecha);
+            info_item.appendChild(fuente);
+
+            const {url} = data.articles[i];
+
+            let item = document.createElement("div");
+            item.className = "item";
+            item.appendChild(h2);
+            item.appendChild(img);
+            item.appendChild(info_item);
+            item.setAttribute("onclick", "location.href='"+url+"'");
+            document.querySelector(".container-noticias").appendChild(item);
+        }
+
+        let btnSiguiente = document.createElement("span");
+        btnSiguiente.id = "btnSiguiente";
+        btnSiguiente.textContent = "Ver más";
+        btnSiguiente.setAttribute("onclick","siguiente()");
+        document.querySelector(".container-noticias").appendChild(btnSiguiente);
+    }
+}
+
+
+
+function buscar(cat){
+    pageInicial = 0;
+    pageFinal = cantidadNoticias;
+    temaActual = cat;
+    noticias.fetchNoticias(cat);
+}
+
+function buscarTema(){
+    pageInicial = 0;
+    pageFinal = cantidadNoticias;
+
+    let tema = document.querySelector("#busqueda").value;
+    temaActual = tema;
+    noticias.fetchNoticias(temaActual);
+}
+
+function siguiente(){
+    pageInicial = pageFinal + 1;
+    pageFinal = pageFinal + cantidadNoticias + 1;
+    document.querySelector("#btnSiguiente").remove();
+    noticias.fetchNoticias(temaActual);
+
+}
+
+noticias.fetchNoticias(temaActual);

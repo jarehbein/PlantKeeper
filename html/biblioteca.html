@@ -1,83 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblioteca de Plantas</title>
+    <title>Biblioteca</title>
     <link rel="stylesheet" href="../css/calendario.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/css/flores.css">
     <link rel="icon" type="image/x-icon" href="../img/img icon.png">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            const apiKey = 'api-plants';
-            const apiUrl = `https://my-api.plantnet.org/v2/identify/all?api-key=${apiKey}`;
-
-            const imageUrl = {
-                url: 'https://www.consumer.es/app/uploads/fly-images/274322/bulbosas-1200x550-cc.jpg',
-            };
-
-            $.ajax({
-                url: apiUrl,
-                method: 'POST',
-                contentType: 'application/json',
-                data: JSON.stringify(image),
-                success: function(data) {
-                    // Procesar los datos obtenidos de la PlantNet API
-                    mostrarInformacion(data);
-                },
-                error: function(error) {
-                    console.log(error);
-                }
-            });
-        });
-
-        // Función para mostrar la información en tu página
-        function mostrarInformacion(data) {
-            // Accede a los datos que necesitas de la respuesta de la API
-            const plantName = data.results[0].species.scientific_name;
-            const commonName = data.results[0].species.common_names[0];
-            const imageUrl = data.results[0].images[0].url;
-
-            // Actualiza el contenido de tu página con la información obtenida
-            $('#plantName').text(plantName);
-            $('#commonName').text(commonName);
-            $('#image').attr('src', imageUrl);
-        }
-    </script>
-    <script src="./js/api.js"></script>
 </head>
-<div class="container">
+<body>
+    <div class="container">
     <header>
-      <div class="logo">
-        <a href="#"><img src="../img/img icon.png" alt="Logo"></a>
-      </div>
-        <h1>Biblioteca de Plantas</h1>
-
-    </header>
-        <div class="breadcrumbs">
-            <a href="index.html" class="item">Inicio</a> 
-            >
-            <a href="foro.html" class="item">Biblioteca de Plantas</a>
+        <div class="logo">
+            <a href="#"><img src="../img/img icon.png" alt="Logo"></a>
         </div>
-        <nav>
-          <ul>
+        <h1>Biblioteca</h1>
+    </header>
+
+    <div class="breadcrumbs">
+        <a href="index.html" class="item">Inicio</a>
+        <a href="foro.html" class="item">Biblioteca de Plantas</a>
+    </div>
+    <nav>
+        <ul>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="foro.html">Foro</a></li>
             <li><a href="galeria.html">Plantas</a></li>
-          </ul>
-        </nav>
-      </header>
+        </ul>
+    </nav>
 
-    <h2>Información de la planta</h2>
-    <div>
-        <h2 id="plantName"></h2>
-        <p>Nombre común: <span id="commonName"></span></p>
-        <img id="image" src="https://www.consumer.es/app/uploads/fly-images/274322/bulbosas-1200x550-cc.jpg" alt="Imagen de la planta">
+    <div class="container">
+        <h1>NOTICIAS</h1>
+        <header>
+            <nav>
+                <span class="cat" onclick="buscar('Flores')">Flores</span>
+                <span class="cat" onclick="buscar('Programación')">Programación</span>
+                <span class="cat" onclick="buscar('plantas')">Plantas</span>
+                <span class="cat" onclick="buscar('plantas de exterior')">Plantas de exterior</span>
+                <span class="cat" onclick="buscar('plantas de interior')">Plantas de interior</span>
+            </nav>
+            <div class="busqueda">
+                <input type="text" placeholder="Qué desea buscar" id="busqueda">
+                <button onclick="buscarTema()">Buscar</button>
+            </div>
+        </header>
+
+
+        <div class="container-noticias">
+
+        </div>
     </div>
+
+    <script src="/js/api.js"></script>
 
     <footer>
         <p>&copy; 2023 PlantKeeper</p>
-      </footer>
+    </footer>
 </body>
 </html>

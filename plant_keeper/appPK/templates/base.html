@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Keeper</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'appPK/css/style.css' %}">
+
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <a href="#"><img src="../img/img icon.png" alt="Logo"></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/">Plant Keeper</a></li>
+        <li><a href="/calendario.html">Calendario</a></li>
+        <li><a href="/foro.html">Foro</a></li>
+        <li><a href="/galeria.html">Galería</a></li>
+        <li><a href="/biblioteca.html">Biblioteca de Plantas</a></li>
+        <li><a href="/contacto.html">Contacto</a></li>
+        <li class="login-button"><a href="/inisesion.html">Iniciar sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="content">
+    {% block content %}
+    <!-- Aquí se colocará el contenido específico de cada página -->
+    {% endblock %}
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+            <p>&copy; 2023 Plant Keeper. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

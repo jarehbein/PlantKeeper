@@ -1,12 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Foro de Comunidad</title>
-    <link rel="stylesheet" href="../css/galeria.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="icon" type="image/x-icon" href="../img/img icon.png">
-    <script src="house-plants2.p.rapidapi.com"></script>
+    <link rel="stylesheet" href="{% static 'css/galeria.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'appPK/img/img icon.png' %}">
     <script>
         $(document).ready(function() {
             $.ajax({
@@ -27,7 +27,7 @@
     <div class="container">
     <header>
       <div class="logo">
-        <a href="#"><img src="../img/img icon.png" alt="Logo"></a>
+        <a href="index.html"><img src="{% static 'appPK/img/img icon.png' %}" alt="Logo"></a>
       </div>
         <h1>Foro de Comunidad</h1>
 

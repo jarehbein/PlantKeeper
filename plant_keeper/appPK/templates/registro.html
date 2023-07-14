@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Keeper</title>
+    <link rel="stylesheet" href="{% static 'css/foro.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contacto.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/iniSe.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'appPK/img/img icon.png' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="index.html"><img src="{% static 'appPK/img/img icon.png' %}" alt="Logo"></a>
+            </div>
+            <h1>Registro</h1>
+        </header>
+        <div class="breadcrumbs">
+            <a href="index.html" class="item">Inicio</a>
+            >
+            <a href="inisesion.html" class="item">Inicio Sesión</a>
+        </div>
+
+        <div class="containerPrincipal">
+            <div class="form-group">
+              <input type="text" id="usuario" class="form-control" name="username" placeholder="Ingrese su usuario">
+              <input type="password" id="contraseña" class="form-control" name="password" placeholder="Ingrese su contraseña">
+              <br>
+              <button id="registro" class="boton">Registrarse</button>
+            </div>
+            <div class="forgot-password">
+            </div>
+          </div>
+          
+    </div>
+
+    <script src="./js/iniSes.js"></script>
+</body>
+<footer>
+    <p>&copy; 2023 PlantKeeper</p>
+</footer>
+</html>

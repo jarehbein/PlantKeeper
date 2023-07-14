@@ -7,9 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content=" Página web para organizar y ayudar al cuidado de plantas">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <link rel="stylesheet" type="text/css" href="{% static 'appPK/css/style.css' %}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">  <link rel="stylesheet" type="text/css" href="{% static 'appPK/css/style.css' %}">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
   <title>Plant Keeper</title>
   <link rel="icon" type="image/x-icon" href="{% static 'appPK/img/img icon.png' %}">
 </head>
@@ -18,7 +17,7 @@
   <div class="container">
     <header>
       <div class="logo">
-        <a href="#"><img src="{% static 'appPK/img/img icon.png' %}" alt="Logo"></a>
+        <a href="index.html"><img src="{% static 'appPK/img/img icon.png' %}" alt="Logo"></a>
       </div>
       <nav>
         <ul>
@@ -29,7 +28,6 @@
         <a href="biblioteca.html">Biblioteca de Plantas</a>
         <a href="contacto.html">Contacto</a>
         <li class="login-button"><a href="inisesion.html">Iniciar sesión</a></li>
-        <!--<a href="#" onclick="showPopup(event)">Iniciar sesión</a>-->
       </ul>
       </nav>
     </header>
@@ -39,7 +37,7 @@
   <div id="carousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="3000">
-        <img src="{% static 'appPK/images carousel/img1.jpg' %}" class="d-block w-100" alt="" height="300px">
+        <img src="{% static 'images carousel/img1.jpg' %}" class="d-block w-100" alt="" height="300px">
       </div>
       
       <div class="carousel-item" data-bs-interval="3000">

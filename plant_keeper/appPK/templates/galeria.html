@@ -1,21 +1,22 @@
-{% extends 'base.html' %}
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <title>Ficha de Plantas</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'appPK/css/galeria.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'appPK/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/galeria.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <link rel="icon" type="image/x-icon" href="{% static 'appPK/img/img icon.png' %}">
+    <script src="{% static 'js/galeria.js' %}"></script>
 </head>
 
 <body>
     <div class="container">
         <header>
             <div class="logo">
-                <a href="#"><img src="{% static 'appPK/img/img icon.png' %}" alt="Logo"></a>
+                <a href="index.html"><img src="{% static 'appPK/img/img icon.png' %}" alt="Logo"></a>
             </div>
             <h1>Galería de plantas</h1>
         </header>
@@ -25,39 +26,45 @@
             >
             <a href="galeria.html" class="item">Galería de Plantas</a>
         </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="foro.html">Foro</a></li>
+                <li><a href="galeria.html">Plantas</a></li>
+            </ul>
+        </nav>
 
         <section class="gallery">
             <div class="image">
-                <a href="planta1.html"><img src="../img/monstera-variegada.jpg" alt="Planta 1"></a>
+                <a href="planta1.html"><img src="{% static 'img/monstera-variegada.jpg' %}" alt="Planta 1"></a>
                 <div class="caption">Monstera Variegada</div>
             </div>
             <div class="image">
-                <a href="planta2.html"><img src="../img/orquidea.jpeg" alt="Planta 2"></a>
+                <a href="planta2.html"><img src="{% static 'img/orquidea.jpeg' %} " alt="Planta 2"></a>
                 <div class="caption">Orquidea Mini</div>
             </div>
             <div class="image">
-                <a href="planta3.html"><img src="../img/philodendron-white-princess.jpg" alt="Planta 3"></a>
+                <a href="planta3.html"><img src="{%static 'img/philodendron-white-princess.jpg'%}" alt="Planta 3"></a>
                 <div class="caption">Filodendro Princesa Blanca</div>
             </div>
 
             <div class="image">
-                <a href="planta4.html"><img src="../img/sansevieria.jpg" alt="Planta 4"></a>
+                <a href="planta4.html"><img src="{%static 'img/sansevieria.jpg'%}" alt="Planta 4"></a>
                 <div class="caption">Sansevieria</div>
             </div>
 
             <div class="image">
-                <a href="planta5.html"><img src="../img/philodendro-paraguayo.jpg" alt="Planta 5"></a>
+                <a href="planta5.html"><img src="{%static 'img/philodendro-paraguayo.jpg'%}" alt="Planta 5"></a>
                 <div class="caption">Filodendro Paraguayo</div>
             </div>
 
             <div class="image">
-                <a href="planta6.html"><img src="../img/pilea-peperomioides.jpg" alt="Planta 6"></a>
+                <a href="planta6.html"><img src="{%static 'img/pilea-peperomioides.jpg'%}" alt="Planta 6"></a>
                 <div class="caption">Pilea Peperomioides</div>
             </div>
 
 
         </section>
-        <script src="galeria.js"></script>
     </div>
 
     <footer>

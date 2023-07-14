@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plant Keeper</title>
-    <link rel="stylesheet" href="../css/foro.css">
-    <link rel="stylesheet" href="../css/contacto.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/iniSe.css">
-    <link rel="icon" type="image/x-icon" href="../img/img icon.png">
+    <link rel="stylesheet" href="{% static 'css/foro.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contacto.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/iniSe.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'appPK/img/img icon.png' %}">
 </head>
 <body>
     <div class="container">
         <header>
             <div class="logo">
-                <a href="#"><img src="../img/img icon.png" alt="Logo"></a>
+                <a href="index.html"><img src="{% static 'appPK/img/img icon.png' %}" alt="Logo"></a>
             </div>
             <h1>Inicio Sesión</h1>
         </header>
@@ -34,13 +35,16 @@
             </div>
             <div class="forgot-password">
                 <a href="#">¿Olvidaste tu contraseña?</a>
-                <button id="registro" class="boton">Registrarse</button>
+                <br><br>
+                <center>
+                <a id="registro" class="boton" href="registro.html"> Registrarse </a>
+                </center>
             </div>
           </div>
           
     </div>
 
-    <script src="./js/iniSes.js"></script>
+    <script src="{%static 'js/iniSes.js' %}"></script>
 </body>
 <footer>
     <p>&copy; 2023 PlantKeeper</p>

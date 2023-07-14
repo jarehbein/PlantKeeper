@@ -1,22 +1,22 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <title>Plant Keeper</title>
-    <link rel="stylesheet" href="../css/foro.css">
-    <link rel="stylesheet" href="../css/contacto.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="icon" type="image/x-icon" href="../img/img icon.png">
+    <link rel="stylesheet" href="{% static 'css/foro.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contacto.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'appPK/img/img icon.png' %}">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="js/sweetAlert.js"></script>
 </head>
 
 <body>
     <div class="container">
         <header>
             <div class="logo">
-                <a href="#"><img src="../img/img icon.png" alt="Logo"></a>
+                <a href="index.html"><img src="{% static 'appPK/img/img icon.png' %}" alt="Logo"></a>
             </div>
             <h1>Contacto</h1>
         </header>
@@ -28,6 +28,7 @@
 
         <main>
             <form id="contact-form">
+                <center>
                 <div>
                     <label for="name">Nombre Completo:</label>
                     <input type="text" id="name" name="name" required>
@@ -40,18 +41,28 @@
                     <label for="message">Escribe aquí tu comentario:</label>
                     <textarea id="message" name="message" rows="10" cols="50" required></textarea>
                 </div>
+                <br>
                 <button type="submit">Enviar</button>
                 <p class="warnings" id="warnings"></p>
             </form>
+            <br>
             <p>Cualquier duda o consulta estaremos al pendiente!</p>
+        </center>
+        <img src="{%static 'img/img icon.png' %}" alt="contact" height="300px">
+
         </main>
     </div>
 
-    <script src="./js/contacto.js"></script>
+    <script src="{%static 'js/api.js' %}"></script>
     <script>
         document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault();
             Swal.fire('¡Se envió tu mensaje, muchas gracias!');
+
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('message').value = '';
+            
         });
     </script>
 </body>

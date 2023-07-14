@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,23 +7,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca</title>
-    <link rel="stylesheet" href="../css/calendario.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="/css/flores.css">
-    <link rel="icon" type="image/x-icon" href="../img/img icon.png">
+    <link rel="stylesheet" href="{% static 'css/calendario.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flores.css' %} ">
+    <link rel="icon" type="image/x-icon" href="{% static 'appPK/img/img icon.png' %}">
 </head>
 <body>
     <div class="container">
     <header>
         <div class="logo">
-            <a href="#"><img src="../img/img icon.png" alt="Logo"></a>
+            <a href="index.html"><img src="{% static 'appPK/img/img icon.png' %}" alt="Logo"></a>
         </div>
         <h1>Biblioteca</h1>
     </header>
 
     <div class="breadcrumbs">
         <a href="index.html" class="item">Inicio</a>
-        <a href="foro.html" class="item">Biblioteca de Plantas</a>
+        <a href="biblioteca.html" class="item">Biblioteca de Plantas</a>
     </div>
     <nav>
         <ul>
@@ -42,21 +44,21 @@
                 <span class="cat" onclick="buscar('plantas de interior')">Plantas de interior</span>
             </nav>
             <div class="busqueda">
-                <input type="text" placeholder="Qué desea buscar" id="busqueda">
+                <input type="text" placeholder="Qué desea buscar?" id="busqueda">
                 <button onclick="buscarTema()">Buscar</button>
             </div>
         </header>
 
 
         <div class="container-noticias">
-
         </div>
     </div>
 
-    <script src="/js/api.js"></script>
+    <script src="{% static 'js/api.js' %}"></script>
 
     <footer>
         <p>&copy; 2023 PlantKeeper</p>
     </footer>
+    
 </body>
 </html>

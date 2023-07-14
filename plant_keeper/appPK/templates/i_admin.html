@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADMINISTRADOR</title>
-    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+    <link rel="stylesheet" href="{% static 'css/adm.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'appPK/css/style.css' %}">
 </head>
 <body>
     <div class="container">
         <div>
-            <h1 class="titulo">MENÚ <br> ADMINISTRACIÓN</h1>
+            <h1 class="titulo">ADMIN</h1>
         </div>
         <table> 
             <thead>
@@ -22,22 +23,20 @@
                     <th></th>
                     <th></th>
                     <th>    
-                        <a href="{% url 'nuevo_user' %}" class="btn-1">+</a>
+                        <a href="i_admin.html" class="btn-1">+</a>
                     </th>
                     </tr>
             </thead>
             <tbody>
-                {% for u in usuarios %}
                 <tr>
                     <td>{{u.id_usuario}}</td>
                     <td>{{u.usuario}}</td>
                     <td>{{u.contraseña}}</td>
                     <td></td>
                     <td></td>
-                    <td><a href="{% url 'encontrarUsuario' pk=u.id_usuario %}">Editar</a></td>
-                    <td>     <a href="{% url 'eliminarUsuario'  pk=u.id_usuario %}">Eliminar</a></td>
+                    <td><a href="editar_user.html pk=u.id_usuario ">Editar</a></td>
+                    <td><a href="eliminar_user.html  pk=u.id_usuario">Eliminar</a></td>
                 </tr>
-                {% endfor %}
             </tbody>
         </table>
     </div>

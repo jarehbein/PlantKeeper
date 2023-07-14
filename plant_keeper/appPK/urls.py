@@ -13,5 +13,4 @@ urlpatterns = [
     path('planta1.html', views.planta1, name='planta1'),
     path('planta2.html', views.planta2, name='planta2'),
     path('planta3.html', views.planta3, name='planta3'),
-    
 ]

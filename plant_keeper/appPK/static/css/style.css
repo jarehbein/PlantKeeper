@@ -3,7 +3,7 @@ body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
-  background-color: antiquewhite;
+  background-color: #D3D3D3;
   font-size: 16px;
 }
 
@@ -46,7 +46,7 @@ nav a {
 }
 
 nav a:hover {
-  color: rgb(14, 14, 14);
+  color: #FFFFFF
 }
 
 .container {
@@ -70,8 +70,8 @@ nav a:hover {
 
 header,
 footer {
-  background-color: antiquewhite;
-  color: #000000;
+  background-color: #D3D3D3;
+  color: #FFFFFF;
   padding: 10px;
 }
 
@@ -318,8 +318,9 @@ nav ul li a {
 .login-button a {
   color: #fff;
   padding: 10px 20px;
+  transition: color 0.3s ease;
 }
 
 .login-button a:hover {
-  background-color: #90cc9a;
+  color: #000000;
 }

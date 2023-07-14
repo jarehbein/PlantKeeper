@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/adm.css' %}">
+    <title>Panel de administrador</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% static 'i_admin' %}">Usuarios</a></li>
+            <li class="right-corner" style="margin-left: auto;"><a href="{% static 'i_admin.html' %}">Volver</li>
+        </ul>
+    </nav>
+    <h1 style="text-align: center;" data-text="Página de administrador principal"></h1>
+</body>
+</html>

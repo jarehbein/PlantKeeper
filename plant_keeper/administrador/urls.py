@@ -1,7 +1,8 @@
 from django.urls import path
-from . import views
+from administrador import views
 
 urlpatterns = [
+    path('panel_administracion/',views.panel,name="panel_administracion"),
     path('administrador/', views.i_admin, name='administrador'),
     path('encontrarUsuario/<int:pk>/', views.encontrarUsuario, name='encontrarUsuario'),
     path('encontrarUsuario/', views.encontrarUsuario, name='encontrarUsuario'),

@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+from django.conf import settings
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -16,6 +17,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+settings.MIME_TYPES = {
+    '.js': 'application/javascript',
+}
 
 # Application definition
 

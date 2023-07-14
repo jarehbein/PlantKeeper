@@ -1,8 +1,10 @@
 from django.contrib import admin
 from django.urls import path,include
+from appPK import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.home, name='index'),
     path('',include('appPK.urls')),
     path('',include('administrador.urls')),
 ] 

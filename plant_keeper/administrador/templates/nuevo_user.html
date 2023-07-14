@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +11,7 @@
 
 </head>
 <body>
-    <form action="i_admin.html" method="POST">
+    <form action="{% url 'administrador' % }" method="POST">
         <h1 class="title">NUEVO USER</h1>
         {% csrf_token %}
         <label>
@@ -21,7 +22,7 @@
             <i class="fa-solid fa-lock"></i>Contraseña <br>
             <input placeholder="" type="text" id="password" name="contraseña">
         </label>
-        <a href="{% url 'administrador' %}" class="link">Volver al menu de administración</a>
+        <a href="i_admin.html" class="link">Volver al menu de administración</a>
         <div id="idMensaje">
             {% if mensaje %}
                 {{mensaje}}
